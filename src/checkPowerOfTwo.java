@@ -1,14 +1,15 @@
+import static java.lang.Math.ceil;
+import static java.lang.Math.floor;
 
  public class checkPowerOfTwo{
 
     //Ctrl + shift + T to create test of method
-    public int isPower(int number){
+    public boolean isPower(int number){
 
-        if(number == 0)  return 0; // if number is 0, undf, return false
-        while(number != 1){
-            number = number/2;
-            if((number % 2 != 0) && (number != 1)){ return 0; }
-        }
-        return 1;
+        if(number==0)
+            return false;
+
+        return (int)(Math.ceil((Math.log(number) / Math.log(2)))) ==
+                (int)(Math.floor(((Math.log(number) / Math.log(2)))));
     }
 }
